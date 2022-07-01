@@ -100,9 +100,11 @@ for i,l in tqdm(enumerate(sorted(files_by_slice.keys())), total=len(files_by_sli
             all_contours += contour_to_con(contours, i, j)
             all_smooth_contours += contour_to_con(smooth_contours, i, j)
 
+os.makedirs(args.outdir, exist_ok=True)    
+
 with open(con_file, 'r') as infile:
-    with open("{}/autopred_{}.con".format(args.outdir,args.id)), "w") as outfile:
-        with open("{}/smooth_autopred_{}.con".format(args.outdir,args.id)), "w") as smoothfile:
+    with open("{}/autopred_{}.con".format(args.outdir,args.id), "w") as outfile:
+        with open("{}/smooth_autopred_{}.con".format(args.outdir,args.id), "w") as smoothfile:
             for line in infile.readlines():
                 if("[DISTANCE LABELS]" in line):
                     outfile.write(all_contours)
