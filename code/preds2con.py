@@ -102,12 +102,17 @@ for i,l in tqdm(enumerate(sorted(files_by_slice.keys())), total=len(files_by_sli
 
 os.makedirs(args.outdir, exist_ok=True)    
 
+in_old_contour_part = False
 with open(con_file, 'r') as infile:
     with open("{}/autopred_{}.con".format(args.outdir,args.id), "w") as outfile:
         with open("{}/smooth_autopred_{}.con".format(args.outdir,args.id), "w") as smoothfile:
             for line in infile.readlines():
+                if("[XYCONTOUR]" in line):
+                    in_old_contour_part = True
                 if("[DISTANCE LABELS]" in line):
                     outfile.write(all_contours)
-                    smoothfile.write(all_contours)
-                outfile.write(line)
-                smoothfile.write(line)
+                    smoothfile.write(all_smooth_contours)
+                    in_old_contour_part = False
+                if not in_old_contour_part:
+                    outfile.write(line)
+                    smoothfile.write(line)
