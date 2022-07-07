@@ -31,7 +31,7 @@ def get_confusion(path1, path2):
         # https://stackoverflow.com/a/50023660
         cm = np.zeros((3, 3), dtype=int)
         np.add.at(cm, (m1, m2), 1)
-        confusions.append([i, f1.parent.parent.name, f2.parent.parent.name, *cm.flatten().tolist()])
+        confusions.append([i, f1.parent.name, f2.parent.name, *cm.flatten().tolist()])
     conf_table = pd.DataFrame(confusions, columns=["image","methodA","methodB","bg_bg","bg_lv","bg_my","lv_bg","lv_lv","lv_my","my_bg","my_lv","my_my"])
     return (conf_table)
 
