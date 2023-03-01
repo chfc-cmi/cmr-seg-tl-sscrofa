@@ -1,7 +1,5 @@
-# Project <insert name>
+# CMR segmentation of /Sus scrofa/ with transfer learning
 
-## Dataset structure
+## More documentation to come
 
-- All inputs (i.e. building blocks from other sources) are located in
-  `inputs/`.
-- All custom code is located in `code/`.
+Info: This is a [DataLad](https://www.datalad.org/) repository. You can clone it with plain git, but it works best with DataLad.
