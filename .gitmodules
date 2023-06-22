@@ -1,5 +1,5 @@
 [submodule "inputs/cmr-cine-sscrofa"]
 	path = inputs/cmr-cine-sscrofa
-	url = git@git.physik.uni-wuerzburg.de:iimog/cmr-cine-sscrofa.git
+	url = git@github.com:chfc-cmi/cmr-cine-sscrofa.git
 	datalad-id = 02ffb202-1110-488a-b7ae-a77aecd0182f
 	datalad-url = git@git.physik.uni-wuerzburg.de:iimog/cmr-cine-sscrofa.git
